@@ -37,3 +37,27 @@ var decodeString = function(s) {
   }  
   return final;
 }
+
+// function decodeString(s) {
+//   let stack = []
+//   debugger;
+//   let curNum = 0
+//   let curString = ''
+//   for (let c of s) {
+//     if (c === '[') {
+//       stack.push(curString)
+//       stack.push(curNum)
+//       curNum = 0
+//       curString = ''
+//     } else if (c === ']') {
+//       let num = stack.pop()
+//       let prevString = stack.pop()
+//       curString = prevString + curString.repeat(parseInt(num))
+//     } else if (parseInt(c) || c === '0') {
+//       curNum = curNum*10 + parseInt(c)
+//     } else {
+//       curString += c
+//     }
+//   }
+//   return curString
+// }
