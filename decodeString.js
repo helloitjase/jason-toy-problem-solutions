@@ -15,20 +15,18 @@ var decodeString = function(s) {
       chunk = true;
     } else if (s[i] === ']') {
       counter--;
-      if (chunk) {
-        repeat += s[i];
-      }
       if (counter === 0) {
-        // let breakdown = decodeString(repeat);
         let breakdown = '';
         for (let i = 0; i < Number(number); i++) {
-//           debugger;
           breakdown += decodeString(repeat);
         }
         final += breakdown;
         repeat = '';
         number = '';
         chunk = false;
+      }
+         if (chunk) {
+        repeat += s[i];
       }
     } else if (counter > 0) {
       repeat += s[i];
